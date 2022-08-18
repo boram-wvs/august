@@ -31,8 +31,7 @@ public class RabbitConfig {
         return new Jackson2JsonMessageConverter();
     }
 
-    @Bean("replyToContainer")
-    @ConditionalOnProperty(prefix = "spring.rabbitmq", name = "host")
+    @Bean
     public SimpleMessageListenerContainer replyContainer(ConnectionFactory connectionFactory) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
         container.setQueueNames(repliesQueue().getName());
