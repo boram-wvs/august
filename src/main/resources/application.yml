@@ -1,0 +1,41 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: processor;consumer;rpcconsumer;
+      bindings:
+        processor-in-0:
+          binder: local_rabbit
+          destination: sample-topic-0
+          group: sample-group
+          durableSubscription: true
+        processor-out-0:
+          binder: local_rabbit
+          destination: sample-topic-1
+          group: sample-group
+        consumer-in-0:
+          binder: local_rabbit
+          destination: sample-topic-1
+          durableSubscription: true
+          group: sample-group
+        rpcconsumer-in-0:
+          binder: local_rabbit
+          destination: sample-direct-0
+          group: sample-queue-4
+          durableSubscription: true
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: master
+                password: master
+                virtual-host: /
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: master
+    password: master

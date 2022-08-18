@@ -1,0 +1,6 @@
+###
+GET http://localhost:8080/api/message/deft
+
+###
+GET http://localhost:8080/api/message/rpc/deft
+
