@@ -1,13 +1,7 @@
 # august 
 
-stream + rabbitmq + rpc
+prototype
 
-Spring Cloud Stream, Functional Way
-MQ
-AMQP
-RABBITMQ
-ASYNC
-FUTURE
-+WEBFLUX
-RPC
-EventLoop
+- cloud stream + rabbitmq
+- cloud stream + rabbitmq + rpc
+
